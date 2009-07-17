@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>File: README.rdoc [A place for Ruby objects to hide instance variables.]</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='file' id='wrapper'>
+      <div class='header'>
+        <div class='name'>README.rdoc</div>
+        <div class='paths'>
+          README.rdoc
+        </div>
+        <div class='last-update'>
+          Last Update:
+          <span class='datetime'>2009-07-17 09:11:52 -0400</span>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            <h1><a href="../classes/Attic.html">Attic</a> - v0.4 ALPHA</h1>
+            <p>
+            A place for Ruby objects to hide instance variables.
+            </p>
+            <h2>Alpha Notice</h2>
+            <p>
+            This library is fresh (est 2009-07-06) and barely tested. It&#8217;s fun to
+            use but not reliable yet.
+            </p>
+            <h2>Example</h2>
+            <pre>require 'attic'&#x000A;&#x000A;String.extend Attic&#x000A;String.attic :timestamp&#x000A;&#x000A;a = &quot;anything&quot;&#x000A;a.timestamp = &quot;1980-11-18&quot;&#x000A;a.instance_variables          # =&gt; []&#x000A;a.timestamp                   # 1980-11-18</pre>
+            <h2>Some objects have no metaclasses</h2>
+            <p>
+            Symbol and Fixnum objects do not have metaclasses so instance variables are
+            hidden in the object itself.
+            </p>
+            <h2>Installation</h2>
+            <p>
+            Via Rubygems, one of:
+            </p>
+            <pre>$ gem install attic&#x000A;$ gem install delano-attic --source http://gems.github.com/</pre>
+            <p>
+            or via download:
+            </p>
+            <ul>
+            <li><a
+            href="http://github.com/delano/attic/tarball/latest">attic-latest.tar.gz</a>
+            
+            </li>
+            <li><a
+            href="http://github.com/delano/attic/zipball/latest">attic-latest.zip</a>
+            
+            </li>
+            </ul>
+            <h2>Credits</h2>
+            <ul>
+            <li>Delano (@solutious.com)
+            
+            </li>
+            </ul>
+            <h2>License</h2>
+            <p>
+            See: <a href="LICENSE_txt.html">LICENSE.txt</a>
+            </p>
+          </div>
+          <div id='section'>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

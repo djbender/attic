@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>: Attic [A place for Ruby objects to hide instance variables.]</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <div class='name'>
+          <span class='type'>Module</span>
+          Attic
+        </div>
+        <ol class='paths'>
+          <li>
+            <a href="../files/lib/attic_rb.html">lib/attic.rb</a>
+          </li>
+        </ol>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            <h1><a href="Attic.html">Attic</a></h1>
+            <p>
+            A place to store instance variables.
+            </p>
+          </div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>public class</h3>
+            <ol>
+              <li><a href="#M000010">extended</a></li>
+              <li><a href="#M000009">included</a></li>
+            </ol>
+            <h3>public instance</h3>
+            <ol>
+              <li><a href="#M000011">attic</a></li>
+              <li><a href="#M000012">attic_vars</a></li>
+            </ol>
+          </div>
+          <div id='section'>
+            <div id='constants-list'>
+              <h2>Constants</h2>
+              <div class='name-list'>
+                <table summary='Constants'>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>VERSION</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'0.4.0'</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id='methods'>
+              <h2>Public class methods</h2>
+              <div class='public-class method' id='method-M000010'>
+                <a name='M000010'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>extended</span>
+                  <span class='arguments'>(o)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000010-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000010-source'>    <span class="ruby-comment cmt"># File lib/attic.rb, line 15</span>&#x000A;15:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">extended</span>(<span class="ruby-identifier">o</span>)&#x000A;16:     <span class="ruby-comment cmt">## NOTE: This is just a reminder for a more descerning way to </span>&#x000A;17:     <span class="ruby-comment cmt">## include the meta methods, instead of using a global mixin. </span>&#x000A;18:     <span class="ruby-comment cmt">##o.class_eval do</span>&#x000A;19:     <span class="ruby-comment cmt">##  include ObjectHelpers</span>&#x000A;20:     <span class="ruby-comment cmt">##end</span>&#x000A;21:     &#x000A;22:     <span class="ruby-comment cmt"># Create an instance method that returns the attic variables. </span>&#x000A;23:     <span class="ruby-identifier">o</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword kw">do</span>&#x000A;24:       <span class="ruby-identifier">define_method</span> <span class="ruby-identifier">:attic_vars</span> <span class="ruby-keyword kw">do</span>&#x000A;25:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">attic_vars</span>&#x000A;26:       <span class="ruby-keyword kw">end</span>&#x000A;27:     <span class="ruby-keyword kw">end</span>&#x000A;28:   <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-class method' id='method-M000009'>
+                <a name='M000009'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>included</span>
+                  <span class='arguments'>(o)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000009-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000009-source'>    <span class="ruby-comment cmt"># File lib/attic.rb, line 11</span>&#x000A;11:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">o</span>)&#x000A;12:     <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;You probably meant to 'extend Attic' in #{o}&quot;</span>&#x000A;13:   <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <h2>Public instance methods</h2>
+              <div class='public-instance method' id='method-M000011'>
+                <a name='M000011'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>attic</span>
+                  <span class='arguments'>(*junk)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  A class method for defining variables to store in the attic.
+                  </p>
+                  <ul>
+                  <li><tt>junk</tt> is a list of variables names. Accessor methods are created
+                  for each variable name in the list.
+                  
+                  </li>
+                  </ul>
+                  <p>
+                  Returns the list of attic variable names or if not junk was given, returns
+                  the metaclass.
+                  </p>
+                  <p>
+                  e.g.
+                  </p>
+                  <pre>String.extend Attic&#x000A;String.attic :timestamp</pre>
+                  <p>
+                  In this example, attic created two instance methods:
+                  </p>
+                  <ul>
+                  <li><tt>String#timestamp</tt> for getting the value
+                  
+                  </li>
+                  <li><tt>String#timestamp</tt> for setting the value
+                  
+                  </li>
+                  </ul>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000011-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000011-source'>    <span class="ruby-comment cmt"># File lib/attic.rb, line 87</span>&#x000A;87:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">attic</span> <span class="ruby-operator">*</span><span class="ruby-identifier">junk</span>&#x000A;88:     <span class="ruby-comment cmt">#p [:attic, self, metaclass?]</span>&#x000A;89:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">metaclass</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">junk</span>.<span class="ruby-identifier">empty?</span>&#x000A;90:     &#x000A;91:     <span class="ruby-identifier">processor</span> = <span class="ruby-identifier">metaclass?</span> <span class="ruby-value">? </span><span class="ruby-ivar">@@metaclass_proc</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@@nometaclass_proc</span>&#x000A;92:     &#x000A;93:     <span class="ruby-identifier">junk</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">var</span><span class="ruby-operator">|</span>&#x000A;94:       <span class="ruby-identifier">processor</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">var</span>)&#x000A;95:     <span class="ruby-keyword kw">end</span>&#x000A;96:     &#x000A;97:     <span class="ruby-identifier">attic_vars</span>&#x000A;98:   <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000012'>
+                <a name='M000012'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>attic_vars</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Returns an Array of attic variables for the current class. e.g.
+                  </p>
+                  <pre>String.extend Attic&#x000A;String.attic :timestamp&#x000A;String.attic_vars           # =&gt; [:timestamp]</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000012-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000012-source'>     <span class="ruby-comment cmt"># File lib/attic.rb, line 107</span>&#x000A;107:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">attic_vars</span>&#x000A;108:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">metaclass?</span>&#x000A;109:       <span class="ruby-identifier">metametaclass</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-value str">&quot;@attic&quot;</span>) <span class="ruby-operator">||</span> []&#x000A;110:     <span class="ruby-keyword kw">else</span>&#x000A;111:       <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-value str">&quot;@___attic_vars&quot;</span>) <span class="ruby-operator">||</span> []&#x000A;112:     <span class="ruby-keyword kw">end</span>&#x000A;113:   <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>
