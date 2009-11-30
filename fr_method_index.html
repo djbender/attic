@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>Methods [A place for Ruby objects to hide instance variables.]</title>
+    <title>Methods [A place to hide private instance variables in your Ruby objects.]</title>
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
     <link href='rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <base target='docwin'>
@@ -4331,18 +4331,27 @@
         
         Element.addMethods();
         var search_index = [
-          { method: 'attic', module: 'attic', html: '<a href="classes/Attic.html#M000011"><span class="method_name">attic</span> <span class="module_name">(Attic)</span></a>' },
-          { method: 'attic_vars', module: 'attic', html: '<a href="classes/Attic.html#M000012"><span class="method_name">attic_vars</span> <span class="module_name">(Attic)</span></a>' },
-          { method: 'class_def', module: 'object', html: '<a href="classes/Object.html#M000005"><span class="method_name">class_def</span> <span class="module_name">(Object)</span></a>' },
-          { method: 'extended', module: 'attic', html: '<a href="classes/Attic.html#M000010"><span class="method_name">extended</span> <span class="module_name">(Attic)</span></a>' },
-          { method: 'included', module: 'attic', html: '<a href="classes/Attic.html#M000009"><span class="method_name">included</span> <span class="module_name">(Attic)</span></a>' },
-          { method: 'meta_def', module: 'object', html: '<a href="classes/Object.html#M000004"><span class="method_name">meta_def</span> <span class="module_name">(Object)</span></a>' },
-          { method: 'meta_eval', module: 'object', html: '<a href="classes/Object.html#M000003"><span class="method_name">meta_eval</span> <span class="module_name">(Object)</span></a>' },
-          { method: 'metaclass', module: 'object', html: '<a href="classes/Object.html#M000002"><span class="method_name">metaclass</span> <span class="module_name">(Object)</span></a>' },
-          { method: 'metaclass?', module: 'object', html: '<a href="classes/Object.html#M000001"><span class="method_name">metaclass?</span> <span class="module_name">(Object)</span></a>' },
-          { method: 'metameta_def', module: 'object', html: '<a href="classes/Object.html#M000008"><span class="method_name">metameta_def</span> <span class="module_name">(Object)</span></a>' },
-          { method: 'metameta_eval', module: 'object', html: '<a href="classes/Object.html#M000007"><span class="method_name">metameta_eval</span> <span class="module_name">(Object)</span></a>' },
-          { method: 'metametaclass', module: 'object', html: '<a href="classes/Object.html#M000006"><span class="method_name">metametaclass</span> <span class="module_name">(Object)</span></a>' },
+          { method: 'attic', module: 'attic', html: '<a href="classes/Attic.html#M000013"><span class="method_name">attic</span> <span class="module_name">(Attic)</span></a>' },
+          { method: 'attic_variable?', module: 'attic', html: '<a href="classes/Attic.html#M000016"><span class="method_name">attic_variable?</span> <span class="module_name">(Attic)</span></a>' },
+          { method: 'attic_variable?', module: 'attic::instancemethods', html: '<a href="classes/Attic/InstanceMethods.html#M000019"><span class="method_name">attic_variable?</span> <span class="module_name">(Attic::InstanceMethods)</span></a>' },
+          { method: 'attic_variable_get', module: 'attic::instancemethods', html: '<a href="classes/Attic/InstanceMethods.html#M000021"><span class="method_name">attic_variable_get</span> <span class="module_name">(Attic::InstanceMethods)</span></a>' },
+          { method: 'attic_variable_set', module: 'attic::instancemethods', html: '<a href="classes/Attic/InstanceMethods.html#M000020"><span class="method_name">attic_variable_set</span> <span class="module_name">(Attic::InstanceMethods)</span></a>' },
+          { method: 'attic_variables', module: 'attic::instancemethods', html: '<a href="classes/Attic/InstanceMethods.html#M000017"><span class="method_name">attic_variables</span> <span class="module_name">(Attic::InstanceMethods)</span></a>' },
+          { method: 'attic_variables', module: 'attic', html: '<a href="classes/Attic.html#M000014"><span class="method_name">attic_variables</span> <span class="module_name">(Attic)</span></a>' },
+          { method: 'attic_vars', module: 'attic::instancemethods', html: '<a href="classes/Attic/InstanceMethods.html#M000018"><span class="method_name">attic_vars</span> <span class="module_name">(Attic::InstanceMethods)</span></a>' },
+          { method: 'attic_vars', module: 'attic', html: '<a href="classes/Attic.html#M000015"><span class="method_name">attic_vars</span> <span class="module_name">(Attic)</span></a>' },
+          { method: 'class_def', module: 'object', html: '<a href="classes/Object.html#M000006"><span class="method_name">class_def</span> <span class="module_name">(Object)</span></a>' },
+          { method: 'extended', module: 'attic', html: '<a href="classes/Attic.html#M000011"><span class="method_name">extended</span> <span class="module_name">(Attic)</span></a>' },
+          { method: 'included', module: 'attic', html: '<a href="classes/Attic.html#M000010"><span class="method_name">included</span> <span class="module_name">(Attic)</span></a>' },
+          { method: 'inherited', module: 'attic', html: '<a href="classes/Attic.html#M000012"><span class="method_name">inherited</span> <span class="module_name">(Attic)</span></a>' },
+          { method: 'meta_def', module: 'object', html: '<a href="classes/Object.html#M000005"><span class="method_name">meta_def</span> <span class="module_name">(Object)</span></a>' },
+          { method: 'meta_eval', module: 'object', html: '<a href="classes/Object.html#M000004"><span class="method_name">meta_eval</span> <span class="module_name">(Object)</span></a>' },
+          { method: 'metaclass', module: 'object', html: '<a href="classes/Object.html#M000003"><span class="method_name">metaclass</span> <span class="module_name">(Object)</span></a>' },
+          { method: 'metaclass?', module: 'object', html: '<a href="classes/Object.html#M000002"><span class="method_name">metaclass?</span> <span class="module_name">(Object)</span></a>' },
+          { method: 'metameta_def', module: 'object', html: '<a href="classes/Object.html#M000009"><span class="method_name">metameta_def</span> <span class="module_name">(Object)</span></a>' },
+          { method: 'metameta_eval', module: 'object', html: '<a href="classes/Object.html#M000008"><span class="method_name">metameta_eval</span> <span class="module_name">(Object)</span></a>' },
+          { method: 'metametaclass', module: 'object', html: '<a href="classes/Object.html#M000007"><span class="method_name">metametaclass</span> <span class="module_name">(Object)</span></a>' },
+          { method: 'nometaclass?', module: 'object', html: '<a href="classes/Object.html#M000001"><span class="method_name">nometaclass?</span> <span class="module_name">(Object)</span></a>' },
         ]
         $(document).observe('dom:loaded', function() {
         	// Setup search-during-typing.
@@ -4363,6 +4372,14 @@
         	} else {
         		search_box.removeClassName('untouched');
         	}
+        	
+        	search_box.insert({
+        	  after: new Element('span', { 'class': 'clear_button' }).update('x').observe('click', function(e) {
+        	    e.stopPropagation()
+          	  search_box.setValue('')
+          	  search_box.focus()
+          	})
+          })
         });
         
         function searchInIndex(query) {
@@ -4405,18 +4422,27 @@
       </form>
       <ol class='methods' id='search-results' style='display: none'></ol>
       <ol class='methods' id='index-entries'>
-        <li><a href="classes/Attic.html#M000011"><span class="method_name">attic</span> <span class="module_name">(Attic)</span></a></li>
-        <li><a href="classes/Attic.html#M000012"><span class="method_name">attic_vars</span> <span class="module_name">(Attic)</span></a></li>
-        <li><a href="classes/Object.html#M000005"><span class="method_name">class_def</span> <span class="module_name">(Object)</span></a></li>
-        <li><a href="classes/Attic.html#M000010"><span class="method_name">extended</span> <span class="module_name">(Attic)</span></a></li>
-        <li><a href="classes/Attic.html#M000009"><span class="method_name">included</span> <span class="module_name">(Attic)</span></a></li>
-        <li><a href="classes/Object.html#M000004"><span class="method_name">meta_def</span> <span class="module_name">(Object)</span></a></li>
-        <li><a href="classes/Object.html#M000003"><span class="method_name">meta_eval</span> <span class="module_name">(Object)</span></a></li>
-        <li><a href="classes/Object.html#M000002"><span class="method_name">metaclass</span> <span class="module_name">(Object)</span></a></li>
-        <li><a href="classes/Object.html#M000001"><span class="method_name">metaclass?</span> <span class="module_name">(Object)</span></a></li>
-        <li><a href="classes/Object.html#M000008"><span class="method_name">metameta_def</span> <span class="module_name">(Object)</span></a></li>
-        <li><a href="classes/Object.html#M000007"><span class="method_name">metameta_eval</span> <span class="module_name">(Object)</span></a></li>
-        <li><a href="classes/Object.html#M000006"><span class="method_name">metametaclass</span> <span class="module_name">(Object)</span></a></li>
+        <li><a href="classes/Attic.html#M000013"><span class="method_name">attic</span> <span class="module_name">(Attic)</span></a></li>
+        <li><a href="classes/Attic.html#M000016"><span class="method_name">attic_variable?</span> <span class="module_name">(Attic)</span></a></li>
+        <li><a href="classes/Attic/InstanceMethods.html#M000019"><span class="method_name">attic_variable?</span> <span class="module_name">(Attic::InstanceMethods)</span></a></li>
+        <li><a href="classes/Attic/InstanceMethods.html#M000021"><span class="method_name">attic_variable_get</span> <span class="module_name">(Attic::InstanceMethods)</span></a></li>
+        <li><a href="classes/Attic/InstanceMethods.html#M000020"><span class="method_name">attic_variable_set</span> <span class="module_name">(Attic::InstanceMethods)</span></a></li>
+        <li><a href="classes/Attic/InstanceMethods.html#M000017"><span class="method_name">attic_variables</span> <span class="module_name">(Attic::InstanceMethods)</span></a></li>
+        <li><a href="classes/Attic.html#M000014"><span class="method_name">attic_variables</span> <span class="module_name">(Attic)</span></a></li>
+        <li><a href="classes/Attic/InstanceMethods.html#M000018"><span class="method_name">attic_vars</span> <span class="module_name">(Attic::InstanceMethods)</span></a></li>
+        <li><a href="classes/Attic.html#M000015"><span class="method_name">attic_vars</span> <span class="module_name">(Attic)</span></a></li>
+        <li><a href="classes/Object.html#M000006"><span class="method_name">class_def</span> <span class="module_name">(Object)</span></a></li>
+        <li><a href="classes/Attic.html#M000011"><span class="method_name">extended</span> <span class="module_name">(Attic)</span></a></li>
+        <li><a href="classes/Attic.html#M000010"><span class="method_name">included</span> <span class="module_name">(Attic)</span></a></li>
+        <li><a href="classes/Attic.html#M000012"><span class="method_name">inherited</span> <span class="module_name">(Attic)</span></a></li>
+        <li><a href="classes/Object.html#M000005"><span class="method_name">meta_def</span> <span class="module_name">(Object)</span></a></li>
+        <li><a href="classes/Object.html#M000004"><span class="method_name">meta_eval</span> <span class="module_name">(Object)</span></a></li>
+        <li><a href="classes/Object.html#M000003"><span class="method_name">metaclass</span> <span class="module_name">(Object)</span></a></li>
+        <li><a href="classes/Object.html#M000002"><span class="method_name">metaclass?</span> <span class="module_name">(Object)</span></a></li>
+        <li><a href="classes/Object.html#M000009"><span class="method_name">metameta_def</span> <span class="module_name">(Object)</span></a></li>
+        <li><a href="classes/Object.html#M000008"><span class="method_name">metameta_eval</span> <span class="module_name">(Object)</span></a></li>
+        <li><a href="classes/Object.html#M000007"><span class="method_name">metametaclass</span> <span class="module_name">(Object)</span></a></li>
+        <li><a href="classes/Object.html#M000001"><span class="method_name">nometaclass?</span> <span class="module_name">(Object)</span></a></li>
       </ol>
     </div>
   </body>

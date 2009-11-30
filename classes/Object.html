@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>: Object [A place for Ruby objects to hide instance variables.]</title>
+    <title>: Object [A place to hide private instance variables in your Ruby objects.]</title>
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
     <link href='../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
@@ -31,7 +31,7 @@
         </div>
         <ol class='paths'>
           <li>
-            <a href="../files/lib/attic/mixins/object_rb.html">lib/attic/mixins/object.rb</a>
+            <a href="../files/lib/attic/mixins_rb.html">lib/attic/mixins.rb</a>
           </li>
         </ol>
         <div class='parent'>
@@ -52,14 +52,15 @@
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000005">class_def</a></li>
-              <li><a href="#M000004">meta_def</a></li>
-              <li><a href="#M000003">meta_eval</a></li>
-              <li><a href="#M000002">metaclass</a></li>
-              <li><a href="#M000001">metaclass?</a></li>
-              <li><a href="#M000008">metameta_def</a></li>
-              <li><a href="#M000007">metameta_eval</a></li>
-              <li><a href="#M000006">metametaclass</a></li>
+              <li><a href="#M000006">class_def</a></li>
+              <li><a href="#M000005">meta_def</a></li>
+              <li><a href="#M000004">meta_eval</a></li>
+              <li><a href="#M000003">metaclass</a></li>
+              <li><a href="#M000002">metaclass?</a></li>
+              <li><a href="#M000009">metameta_def</a></li>
+              <li><a href="#M000008">metameta_eval</a></li>
+              <li><a href="#M000007">metametaclass</a></li>
+              <li><a href="#M000001">nometaclass?</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -82,8 +83,8 @@
             </div>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000005'>
-                <a name='M000005'>      </a>
+              <div class='method public-instance' id='method-M000006'>
+                <a name='M000006'>      </a>
                 <div class='synopsis'>
                   <span class='name'>class_def</span>
                   <span class='arguments'>(name, &amp;blk)</span>
@@ -96,14 +97,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000005-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000006-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000005-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins/object.rb, line 49</span>&#x000A;49:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">class_def</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>&#x000A;50:     <span class="ruby-identifier">class_eval</span> { <span class="ruby-identifier">define_method</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span> }&#x000A;51:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000006-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins.rb, line 49</span>&#x000A;49:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">class_def</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>&#x000A;50:     <span class="ruby-identifier">class_eval</span> { <span class="ruby-identifier">define_method</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span> }&#x000A;51:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000004'>
-                <a name='M000004'>      </a>
+              <div class='method public-instance' id='method-M000005'>
+                <a name='M000005'>      </a>
                 <div class='synopsis'>
                   <span class='name'>meta_def</span>
                   <span class='arguments'>(name, &amp;blk)</span>
@@ -116,14 +117,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000004-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000005-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000004-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins/object.rb, line 43</span>&#x000A;43:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">meta_def</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>&#x000A;44:     <span class="ruby-identifier">meta_eval</span> { <span class="ruby-identifier">define_method</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span> }&#x000A;45:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000005-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins.rb, line 43</span>&#x000A;43:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">meta_def</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>&#x000A;44:     <span class="ruby-identifier">meta_eval</span> { <span class="ruby-identifier">define_method</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span> }&#x000A;45:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000003'>
-                <a name='M000003'>      </a>
+              <div class='method public-instance' id='method-M000004'>
+                <a name='M000004'>      </a>
                 <div class='synopsis'>
                   <span class='name'>meta_eval</span>
                   <span class='arguments'>(&amp;blk;)</span>
@@ -134,14 +135,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000003-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000004-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000003-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins/object.rb, line 38</span>&#x000A;38:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">meta_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>; <span class="ruby-identifier">metaclass</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>; <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000004-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins.rb, line 38</span>&#x000A;38:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">meta_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>; <span class="ruby-identifier">metaclass</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>; <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000002'>
-                <a name='M000002'>      </a>
+              <div class='method public-instance' id='method-M000003'>
+                <a name='M000003'>      </a>
                 <div class='synopsis'>
                   <span class='name'>metaclass</span>
                   <span class='arguments'>()</span>
@@ -158,53 +159,53 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000002-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000003-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000002-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins/object.rb, line 28</span>&#x000A;28:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metaclass</span>&#x000A;29:     <span class="ruby-comment cmt">#p [:metaclass, self, self.class, self.class.metaclass?]</span>&#x000A;30:     <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">metaclass?</span>&#x000A;31:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoMetaClass</span>, <span class="ruby-keyword kw">self</span>&#x000A;32:     <span class="ruby-keyword kw">else</span>&#x000A;33:       <span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>; &#x000A;34:     <span class="ruby-keyword kw">end</span>&#x000A;35:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000003-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins.rb, line 29</span>&#x000A;29:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metaclass</span>&#x000A;30:     <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">metaclass?</span>&#x000A;31:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoMetaClass</span>, <span class="ruby-keyword kw">self</span>&#x000A;32:     <span class="ruby-keyword kw">else</span>&#x000A;33:       <span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>; &#x000A;34:     <span class="ruby-keyword kw">end</span>&#x000A;35:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000001'>
-                <a name='M000001'>      </a>
+              <div class='method public-instance' id='method-M000002'>
+                <a name='M000002'>      </a>
                 <div class='synopsis'>
                   <span class='name'>metaclass?</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000001-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000002-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000001-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins/object.rb, line 13</span>&#x000A;13:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metaclass?</span>&#x000A;14:     <span class="ruby-comment cmt">#p [:metaclass?, self, !NOMETACLASS.member?(self)]</span>&#x000A;15:     <span class="ruby-operator">!</span><span class="ruby-constant">NOMETACLASS</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-keyword kw">self</span>)&#x000A;16:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000002-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins.rb, line 17</span>&#x000A;17:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metaclass?</span>&#x000A;18:     <span class="ruby-operator">!</span><span class="ruby-constant">NOMETACLASS</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>)&#x000A;19:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000008'>
-                <a name='M000008'>      </a>
+              <div class='method public-instance' id='method-M000009'>
+                <a name='M000009'>      </a>
                 <div class='synopsis'>
                   <span class='name'>metameta_def</span>
                   <span class='arguments'>(name, &amp;blk)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000008-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000009-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000008-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins/object.rb, line 63</span>&#x000A;63:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metameta_def</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>&#x000A;64:     <span class="ruby-identifier">metameta_eval</span> { <span class="ruby-identifier">define_method</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span> }&#x000A;65:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000009-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins.rb, line 63</span>&#x000A;63:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metameta_def</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>&#x000A;64:     <span class="ruby-identifier">metameta_eval</span> { <span class="ruby-identifier">define_method</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span> }&#x000A;65:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000007'>
-                <a name='M000007'>      </a>
+              <div class='method public-instance' id='method-M000008'>
+                <a name='M000008'>      </a>
                 <div class='synopsis'>
                   <span class='name'>metameta_eval</span>
                   <span class='arguments'>(&amp;blk;)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000007-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000008-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000007-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins/object.rb, line 61</span>&#x000A;61:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metameta_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>; <span class="ruby-identifier">metametaclass</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>; <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000008-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins.rb, line 61</span>&#x000A;61:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metameta_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>; <span class="ruby-identifier">metametaclass</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>; <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000006'>
-                <a name='M000006'>      </a>
+              <div class='method public-instance' id='method-M000007'>
+                <a name='M000007'>      </a>
                 <div class='synopsis'>
                   <span class='name'>metametaclass</span>
                   <span class='arguments'>()</span>
@@ -216,10 +217,23 @@
                   <pre>self.metaclass.metaclass</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000006-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000007-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000006-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins/object.rb, line 59</span>&#x000A;59:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metametaclass</span>; <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">metaclass</span>.<span class="ruby-identifier">metaclass</span>; <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000007-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins.rb, line 59</span>&#x000A;59:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metametaclass</span>; <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">metaclass</span>.<span class="ruby-identifier">metaclass</span>; <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000001'>
+                <a name='M000001'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>nometaclass?</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000001-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000001-source'>    <span class="ruby-comment cmt"># File lib/attic/mixins.rb, line 13</span>&#x000A;13:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">nometaclass?</span>&#x000A;14:     <span class="ruby-constant">NOMETACLASS</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-keyword kw">self</span>)&#x000A;15:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>
